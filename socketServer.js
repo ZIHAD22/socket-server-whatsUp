@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === "production") {
 
 console.log(clientSide);
 
-const io = require("socket.io")(7000, {
+const io = require("socket.io")(process.env.PORT || 7000, {
     cors: {
         origin: clientSide,
         methods: ["GET", "POST"]
