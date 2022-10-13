@@ -1,16 +1,16 @@
-let clientSide
+// let clientSide
 
-if (process.env.NODE_ENV === "production") {
-    clientSide = "https://whats-up-zihad.netlify.app/"
-} else {
-    clientSide = "http://localhost:3000"
-}
+// if (process.env.NODE_ENV === "production") {
+//     clientSide = "https://whats-up-zihad.netlify.app/"
+// } else {
+//     clientSide = "http://localhost:3000"
+// }
 
-console.log(clientSide);
+// console.log(clientSide);
 
 const io = require("socket.io")(process.env.PORT || 7000, {
     cors: {
-        origin: clientSide,
+        origin: "https://whats-up-zihad.netlify.app/",
         methods: ["GET", "POST"]
     }
 })
