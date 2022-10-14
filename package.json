@@ -4,13 +4,14 @@
   "description": "",
   "main": "socketServer.js",
   "scripts": {
-    "start": "set NODE_ENV=production && node socketServer.js",
-    "dev": "set NODE_ENV=development && nodemon socketServer"
+    "start": "node socketServer.js",
+    "dev": "nodemon socketServer"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "nodemon": "^2.0.20",
     "socket.io": "^4.5.2"
   }

@@ -1,6 +1,7 @@
+require('dotenv').config()
 let clientSide
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.CLIENT_HOSTED === "production") {
     clientSide = "https://whats-up-zihad.netlify.app/"
 } else {
     clientSide = "http://localhost:3000"
