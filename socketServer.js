@@ -11,7 +11,7 @@ console.log(clientSide);
 
 const io = require("socket.io")(process.env.PORT || 7000, {
     cors: {
-        origin: "https://whats-up-zihad.netlify.app",
+        origin: clientSide,
         methods: ["GET", "POST"]
     }
 })
