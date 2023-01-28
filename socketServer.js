@@ -40,12 +40,26 @@ io.on("connection", (socket) => {
     })
 
     // messages
-    socket.on("sendMessage", ({ senderId, receiverId, text }) => {
+    socket.on("sendMessage", ({ senderId, receiverId, text, senderName, senderPic }) => {
         const user = getUser(receiverId);
         io.to(user?.socketId).emit("getMessage", {
+            senderPic,
+            senderName,
             sender: senderId,
             message: text,
         });
+    })
+
+    // notification
+    socket.on("sendNotification", ({ receiver, name, profilePic, messages }) => {
+        console.log({ receiver, name, messages });
+        const sendingUser = getUser(receiver)
+        console.log(sendingUser);
+        io.to(sendingUser?.socketId).emit("getNotification", {
+            name,
+            profilePic,
+            messages
+        })
     })
 
 
